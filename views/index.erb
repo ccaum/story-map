@@ -45,7 +45,7 @@
 <div id="epic-board">
 
   <% client.features.each do |feature| %>
-  <div class="epic-container" id="epic-container-<%= feature[:feature].key %>">Grab Here
+  <div class="epic-container" id="epic-container-<%= feature[:feature].key %>">
     <div class="epic-story" id="epic_<%= feature[:feature].key %>"><%= feature[:feature].fields['summary'] %></div>
 
     <div class='story-container' id='<%= feature[:feature].key %>'>
