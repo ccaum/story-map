@@ -8,13 +8,17 @@
     <script type="text/javascript" src="/js/scriptaculous.js"></script>
 
     <style>
-    .epic-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
-    .story-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
-    .epic-story { width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
 
-    .ui-widget-header p, .ui-widget-content p { margin: 0; }
-    #column { height: 900px; width: 140px; float: left;}
-    #snaptarget { height: 900px; width: 140px; float: left;}
+      .epic-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
+      .story-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
+      .epic-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0px 0px 0px 3px; font-size: .9em; background-color: gray; border-radius: 10px }
+      .epic-story { width: 108px; padding: 8px; float: left; margin: 5px 0px 0px 7px; font-size: 12; background-color: #FFEE00;  border-radius: 10px}
+      .story { width: 108px; padding: 8px; float: left; margin: 5px 0px 0px 7px; font-size: 12; background-color: green;  border-radius: 10px}
+      .story_new { width: 108px; padding: 8px; float: left; margin: 5px 0px 0px 7px; font-size: 12; background-color: #989898;  border-radius: 10px}
+
+      .ui-widget-header p, .ui-widget-content p { margin: 0; }
+      #column { height: 900px; width: 140px; float: left;}
+      #snaptarget { height: 900px; width: 140px; float: left;}
     </style>
 
     <script type='text/javascript' language='javascript'>
@@ -54,6 +58,10 @@
       <%= child.fields['summary'] %>
       </div>
       <% end %>
+
+      <div class='story_new' id='story_new'>
+        Click Here To Create a New Story
+      </div>
     </div>
 
   </div>
