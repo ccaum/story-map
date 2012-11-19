@@ -2,7 +2,7 @@ require 'rack'
 require 'main'
 
 use Rack::Session::Cookie,
-  :key    => 'storymap.puppetlabs.com',
-  :secret => 'holyfuckingshityoudbetterwork'
+  :key    => 'storymap.carlcaum.com',
+  :secret => 'iubaOIJEWFCje834yIJf8932jcj'
 
 run StoryMapApp
