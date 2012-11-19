@@ -1,0 +1,10 @@
+--- 
+:access_token_path: /plugins/servlet/oauth/access-token
+:site: http://localhost:2990
+:private_key_file: storymap.pem
+:context_path: /jira
+:rest_base_path: /rest/api/2
+:signature_method: RSA-SHA1
+:consumer_key: storymapjirakey
+:request_token_path: /plugins/servlet/oauth/request-token
+:authorize_path: /plugins/servlet/oauth/authorize

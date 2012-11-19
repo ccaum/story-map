@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Story Map</title>
+    <script type="text/javascript" src="/js/prototype.js"></script>
+    <script type="text/javascript" src="/js/scriptaculous.js"></script>
+
+    <style>
+    .epic-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
+    .story-container { height: 900px; width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
+    .epic-story { width: 138px; padding: 0; float: left; margin: 0 0 0 0; font-size: .9em; }
+
+    .ui-widget-header p, .ui-widget-content p { margin: 0; }
+    #column { height: 900px; width: 140px; float: left;}
+    #snaptarget { height: 900px; width: 140px; float: left;}
+    </style>
+
+    <script type='text/javascript' language='javascript'>
+    document.observe('dom:loaded', function() {
+      targets = $$('.story-container');
+      targets.each(function(target) {
+        Sortable.create(target.id, {
+          tag:'div', 
+          containment: targets, 
+          dropOnEmpty: true, 
+          constraint: false,
+          onUpdate: function(item) {
+            new Ajax.Request('/relationship', {
+              parameters: Sortable.serialize(target)
+            })
+          }
+        });
+      });
+
+      Sortable.create('epic-board', {tag:'div', dropOnEmpty: true, constraint: false});
+    });
+
+    </script>
+      
+</head>
+<body>
+
+<div id="epic-board">
+
+  <% client.features.each do |feature| %>
+  <div class="epic-container" id="epic-container-<%= feature[:feature].key %>">Grab Here
+    <div class="epic-story" id="epic_<%= feature[:feature].key %>"><%= feature[:feature].fields['summary'] %></div>
+
+    <div class='story-container' id='<%= feature[:feature].key %>'>
+      <% feature[:children].each do |child| %>
+      <div class="story" id="story_<%= child.key %>">
+      <%= child.fields['summary'] %>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+  <% end %>
+</div>
+
+</body>
+</html>
