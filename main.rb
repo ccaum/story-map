@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'jira'
+require 'vendor/jira-ruby/lib/jira'
 require 'yaml'
 require 'lib/storymap'
 
